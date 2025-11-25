@@ -6,3 +6,23 @@ spec:
   containers:
     - name: hola-mundo
       image: carloscabreravas/hola-mundo:5
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservicio-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservicio
+  template:
+    metadata:
+      labels:
+        app: microservicio
+    spec:
+      containers:
+        - name: hola-mundo
+          image: carloscabreravas/hola-mundo:5
+          ports:
+            - containerPort: 80
