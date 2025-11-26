@@ -32,6 +32,13 @@ spec:
           image: carloscabreravas/hola-mundo:5
           ports:
             - containerPort: 3000
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "300m"  
 apiVersion: v1
 kind: Service
 metadata:
