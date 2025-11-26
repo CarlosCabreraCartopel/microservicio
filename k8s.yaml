@@ -43,5 +43,21 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: microservicio
+data:
+  LOG_LEVEL: debug
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: microservicio-config
+data:
+  app.conf: |
+    server {
+      port 1000
+    }
 
